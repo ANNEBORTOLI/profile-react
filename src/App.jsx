@@ -11,14 +11,16 @@ function App() {
   const [dados, setDados] = useState({});
   const [repos, setRepos] = useState([]);
 
+  const [user, setUser] = useState("annebortoli");
+
   useEffect(() => {
-    fetch("https://api.github.com/users/annebortoli")
+    fetch(`https://api.github.com/users/${user}`)
       .then((response) => response.json())
       .then((data) => setDados(data));
   }, []);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/annebortoli/repos")
+    fetch(`https://api.github.com/users/${user}/repos`)
       .then((response) => response.json())
       .then((data) => setRepos(data));
   }, []);
@@ -34,7 +36,7 @@ function App() {
       <Partition title="Repositories" />
       <DivFlex>
         {repos.map((repo, index) => (
-          <Repo key={index} name={repo.name} />
+          <Repo key={index} name={repo.name} url={repo.svn_url} />
         ))}
       </DivFlex>
     </>
