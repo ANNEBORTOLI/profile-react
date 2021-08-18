@@ -1,0 +1,28 @@
+.partition {
+  width: 100%;
+  border-top: solid 6px #444440;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0;
+}
+
+.partition-box {
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  background-color: #f6eadc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partition-central {
+  width: 230px;
+  height: 80px;
+  border: solid 3px #444440;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
